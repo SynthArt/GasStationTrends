@@ -24,7 +24,7 @@ div.header {
 div.main-content {
     background-color: var(--secondary-bg-color);
     display: grid;
-    grid-template-rows: 25% 16.5%; 
+    grid-template-rows: 25% 22.5%; 
     justify-content: center;
     text-align: center;
     height: 70%;
@@ -46,6 +46,10 @@ div#logo {
 form#gasDataInput {
     align-self: center;
     justify-self: center;
+    --smallestFont: 10;
+    --largestFont: 22;
+    --baseUnit: var(--smallestFont) * 1px;
+    font-size: calc( var(--baseUnit) + (var(--largestFont) - var(--smallestFont)) *  var(--fontScale) );
 }
 
 div#gasDataOutput {
@@ -54,14 +58,27 @@ div#gasDataOutput {
 }
 
 /* gasDataInput children */
-input[type=text].searchInput {
-    --smallestFont: 10;
-    --largestFont: 22;
-    --baseUnit: var(--smallestFont) * 1px;
-    font-size: calc( var(--baseUnit) + (var(--largestFont) - var(--smallestFont)) *  var(--fontScale) );
-    /*width: 26vw;*/
-    width: 20em;
 
+select#fuelTypes {
+    width: 10em;
+    padding: 1.25vh 1.25vw;
+    margin: 0.5vh 0;
+    border-radius: 15px;
+    font-size: 0.75em;
+    font-family: inherit;
+    outline: transparent; 
+}
+select#fuelTypes option {
+    width: inherit;
+    padding: inherit;
+    font-family: inherit; 
+    font-size: inherit;
+}
+
+input[type=text].searchInput {
+    width: 19em;
+    font-family: inherit;
+    font-size: 1em;
     padding: 1.25vh 1.25vw;
     border-radius: 15px;
     outline: transparent; /* accessibility option */

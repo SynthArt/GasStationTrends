@@ -11,7 +11,14 @@
 <div class = "main-content">
     <div id = "logo">Top 3 Gas Staions Near This Location</div>
     <form id="gasDataInput" action="main.html" method="POST">
-        <input class = "searchInput" type = "text" placeholder="Search prices by city, addresses, or zip code">
+        <input class = "searchInput" type = "text" placeholder="Search prices by city, address, or zip code">
+        <br>
+        <select name="fuelTypes" id="fuelTypes">
+            <option value="Low-grade">Low-grade</option>
+            <option value="Mid-grade">Mid-grade</option>
+            <option value="High-grade">High-grade</option>
+            <option value="" selected disabled hidden> Fuel Types </option>
+        </select>
     </form>
     <div id = "gasDataOutput">
         <div class = "trendsOutput"></div>
