@@ -95,15 +95,15 @@ formInputFilter.addEventListener("change", async function(event){
     createNavigation(sortedStationByPrices); */
 });
 
-formInput.addEventListener("submit", async function (event) {
+formInput.addEventListener("submit", function (event) {
     // stop from submission
     event.preventDefault();
     const locationInput = formInput.elements[0];
     if(locationInput){
-        const gasData = await GasData(locationInput.value);
-        updateGasTrends(gasData.trends[0])
-        const sortedStationByPrices = quicksort(gasData.stations.results,fuelType);
-        createNavigation(sortedStationByPrices);
+        GasData(locationInput.value).then( (gasData) => {
+            updateGasTrends(gasData.trends[0]);
+            createNavigation( quicksort(gasData.stations.results,fuelType) );
+        });
     }else{
         alert("please enter a location");
     }
