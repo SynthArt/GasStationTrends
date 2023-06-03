@@ -80,7 +80,7 @@ const quicksort = (arr,fuelType) => {
 
 const formInput = document.querySelector("#gasDataInput");
 const formInputFilter = document.querySelector("#fuelTypes");
-const locationInput = document.querySelector(".searchInput");
+//const locationInput = document.querySelector(".searchInput");
 const formOutput = document.querySelector("#gasDataOutput");
 const currency = (country) => { return (country == 'US') ? "$" : "¢"; }
 var fuelType = 0;
@@ -98,6 +98,7 @@ formInputFilter.addEventListener("change", async function(event){
 formInput.addEventListener("submit", async function (event) {
     // stop from submission
     event.preventDefault();
+    const locationInput = formInput.elements[0];
     if(locationInput){
         const gasData = await GasData(locationInput.value);
         updateGasTrends(gasData.trends[0])
