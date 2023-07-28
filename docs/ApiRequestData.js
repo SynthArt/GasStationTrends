@@ -44,7 +44,7 @@ async function GasData(searchData){
         "maxAge": 0,
         "search": searchData
     },
-    "query": "query LocationBySearchTerm($brandId: Int, $cursor: String, $maxAge: Int, $search: String) { locationBySearchTerm(search: $search) { stations(brandId: $brandId, cursor: $cursor, maxAge: $maxAge) { count cursor { next } results {  address { country line1 line2 locality postalCode region }  fuels id name prices { cash { nickname posted_time price } credit { nickname posted_time price } } } } trends { areaName country today todayLow trend } }}"
+    "query": "query LocationBySearchTerm($brandId: Int, $cursor: String, $maxAge: Int, $search: String) { locationBySearchTerm(search: $search) { stations(brandId: $brandId, cursor: $cursor, maxAge: $maxAge) { count cursor { next } results {  address { country line1 line2 locality postalCode region }  fuels id name prices { cash { nickname postedTime price } credit { nickname postedTime price } } } } trends { areaName country today todayLow trend } }}"
     });
 
     let proxy = "https://corsproxy.io/?";
